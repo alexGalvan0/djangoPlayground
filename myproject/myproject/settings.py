@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-ke$#-64_%wge8_&+jvx7oc%m8#vjey4i!%9591*bjo=^l4ss8x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORGINS = ["https://gitpod.io"]
 
 
 # Application definition
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'postgres',
+        'USER':'postgres',
+        'PASSWORD':'postgres',
+        'HOST':'127.0.0.1',
+        'PORT':'5432',
     }
 }
 
